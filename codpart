@@ -1,0 +1,30 @@
+from ControlBit import *
+class Hamming(object):
+	parityBits=[]
+	dataBin=[]
+	bits={}
+	lenMsg=0
+	def strToArray(self,msg):
+		self.lenMsg = len(msg)
+		self.dataBin=[]
+		for l in msg:
+			self.dataBin.append(int(l))
+		self.parityBit()
+		return self.dataBin
+
+	def parityBit(self):
+		self.parBit=1
+		self.i=0
+		while(self.lenMsg>=self.parBit):
+			if self.parBit == 2**self.i:
+				self.parityBits.append(self.parBit)
+				self.i+=1
+			self.parBit+=1
+
+self.i=2
+		for self.posBit in range(len(self.dtB)):
+			if(self.posBit is 2**self.i):
+				self.endMsg.append(self.parBit[self.i])
+				self.i+=1
+			else:
+				self.endMsg.append(self.dtB[self.posBit])
