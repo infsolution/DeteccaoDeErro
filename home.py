@@ -14,4 +14,7 @@ word = raw_input('digite a palavra: ')
 #print dataBin.parityBits
 msg = EndMsg()
 print msg.loadMsg(word)
+print msg.loadMsgOrigInEnd()
+ct = ControlBit()
+print ct.definBits(15,msg.parBit)
 

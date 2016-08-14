@@ -1,25 +1,28 @@
 class ControlBit(object):
 	control = []
 	bits = {}
-	def controlBit(self, bit, lenWord, parBitCont):
-		self.parityBit = bit
-		self.control = parBitCont
-		for self.i in range(lenWord):
-			if self.i in parBitCont:
-				pass
-			else:
-				if self.calBitsCont():
-					self.bits.append(self.i)
-		return self.bits
-				
-
-	def calBitsCont(self):
+	
+	def calBitsCont(self,msg, bitCont):
+		self.control = msg
 		self.lortnoc = self.control[len(self.control)::-1]
-		self.bit=self.parityBit
-		for self.i in self.lortnoc:
-			if self.i < self.bit:
-				self.bit = self.bit-self.i
-			elif self.bit == self.i:
-				return True
-			else:
-				return False
+		self.bit = bitCont
+		for self.j in self.bit:
+			self.btF=[]
+			self.btC=[]
+			for self.i in range()
+			self.btc=self.definBits(j,bitCont)
+			if self.j in self.btc:
+				self.bits[j] = self.btF
+		return self.bits
+
+	def definBits(self, posi, bitCont):
+		self.bitsOk=[]
+		self.bitVer=posi
+		self.bitInver = bitCont[len(bitCont)::-1]
+		i=0
+		while(self.bitVer != 0):
+			if self.bitVer >= self.bitInver[i]:
+				self.bitVer = self.bitVer - self.bitInver[i]
+				self.bitsOk.append(self.bitInver[i])
+			i+=1
+		return self.bitsOk

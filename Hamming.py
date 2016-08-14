@@ -21,3 +21,5 @@ class Hamming(object):
 				self.lenMsg+=1
 			self.parBit+=1
 		print ('bits de controle'),self.parityBits
+
+	
