@@ -43,6 +43,7 @@ class ControlBit(object):
 		self.dicC = self.convertDic(dic,msg)
 		self.parBitEnd=[]
 		for self.j in parBit:
+			print self.j
 			self.bitC=0
 			for self.i in self.dicC[self.j]:
 				self.bitC=self.bitC+self.i

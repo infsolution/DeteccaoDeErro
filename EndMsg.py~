@@ -28,6 +28,7 @@ class EndMsg(object):
 		return self.endMsg
 	def fullMsg(self, parBit,msg):
 		self.fMsg=msg
+		print ('paramentro recebido em msg'), msg
 		self.ps =1
 		self.ps1=0
 		self.exp=0
@@ -37,6 +38,7 @@ class EndMsg(object):
 				self.ps1+=1
 				self.exp+=1
 			self.ps+=1
+		print ('Retorno de fullMsg'),self.fMsg
 		return self.fMsg
 		
 		
