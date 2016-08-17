@@ -1,2 +1,4 @@
 from CRC import *
-
+msCrc = CRC()
+inMsg = raw_input('Digite a mensagem:\n')
+print msCrc.strToArray(inMsg)

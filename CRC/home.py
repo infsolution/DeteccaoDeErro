@@ -1,4 +1,5 @@
 from CRC import *
 msCrc = CRC()
-inMsg = raw_input('digite a mensagem')
-print msCrc.strToArray(inMsg)
+inMsg = raw_input('Digite a mensagem:\n')
+pg = raw_input('informe o polinomio gerador\n')
+print msCrc.strToArray(inMsg, pg)
