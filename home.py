@@ -20,11 +20,14 @@ print ('bits da fullMsg'),ax
 fM = msg.fullMsg(ax,eMsg)
 print ('Mensagem final '),fM
 rc = Receptor()
-errM=[1,1,1,1,1,0,1,0,0,0,1,0,1,0,1,1,1,0,1,1,0,1]
-print ('bits da Mensagem recebida'),rc.idtBitCont(errM,par)
+errM=[0,1,1,0,1,1,1,0,1,1,0,0,0,0,1,0,0,1,0,0,1,0]
+bt = rc.idtBitCont(errM,par)
+print ('bits da Mensagem recebida'), bt
+print ('valores dos bits da Msg receiver'), rc.parBitVal
 bitRec = rc.dicBit()
 print ('bits calculados '), bitRec
 if ax == bitRec:
 	print 'Mensagem ok'
 else:
 	print 'mensagem com erro'
+	print ('bit errado'), rc.calcErro(rc.parBitVal,bitRec,bt)
