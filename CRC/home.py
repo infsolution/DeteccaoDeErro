@@ -1,5 +1,8 @@
 from CRC import *
+from BitXor import *
 msCrc = CRC()
+btXor = BitXor()
 inMsg = raw_input('Digite a mensagem:\n')
 pg = raw_input('informe o polinomio gerador\n')
-print msCrc.strToArray(inMsg, pg)
+msg = msCrc.strToArray(inMsg, pg)
+print btXor.divXor(msg,msCrc.pGer)

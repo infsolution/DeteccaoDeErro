@@ -1,4 +1,3 @@
-from operator import *
 class CRC(object):
 	msgIni=[]
 	dataBin=[]
@@ -10,7 +9,7 @@ class CRC(object):
 		self.lenMsg = len(msg)
 		self.dataBin = self.gerLis(msg)
 		self.pGer = self.gerLis(pG)
-		return dataBin
+		return self.dataBin
 	
 	def gerLis(self, val):
 		self.datLis=[]

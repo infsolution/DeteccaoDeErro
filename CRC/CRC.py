@@ -1,11 +1,9 @@
-from operator import *
 class CRC(object):
 	msgIni=[]
 	dataBin=[]
 	pGer=[]
 	gGer=0
 	def strToArray(self,msg,pG):
-		self.pGer = pG
 		self.gGer = len(self.pGer)-1
 		self.lenMsg = len(msg)
 		self.dataBin = self.gerLis(msg)
