@@ -20,14 +20,15 @@ print ('bits da fullMsg'),ax
 fM = msg.fullMsg(ax,eMsg)
 print ('Mensagem final '),fM
 rc = Receptor()
-errM=[0,1,1,0,1,1,1,0,1,1,0,0,0,0,1,0,0,1,0,0,1,0]
-bt = rc.idtBitCont(errM,par)
+errMI=[0,1,1,0,1,1,1,0,1,1,0,0,0,0,1,0,0,1,0,0,1,0]#erro no bit 17
+errMP=[1,0,1,1,1,1,1,1,1,1,0,0,0,1,1,1,1,1,0,0,1,0]#erro no bit 14
+ev=raw_input('Enviar mensagem - S\nGerar erro antes de enviar - E.\n').upper()
+ms=msg.toSend(ev,fM)
+print ms	
+bt = rc.idtBitCont(ms,par)
 print ('bits da Mensagem recebida'), bt
-print ('valores dos bits da Msg receiver'), rc.parBitVal
+lpb=rc.loParBit()
+print ('valores dos bits da Msg receiver'), lpb
 bitRec = rc.dicBit()
 print ('bits calculados '), bitRec
-if ax == bitRec:
-	print 'Mensagem ok'
-else:
-	print 'mensagem com erro'
-	print ('bit errado'), rc.calcErro(rc.parBitVal,bitRec,bt)
+print rc.verifi(rc.parBitVal,bitRec,bt)

@@ -15,10 +15,15 @@ class Receptor(object):
 			if self.i == 2**self.exp:
 				self.bitPos = 2**self.exp
 				self.parBit.append(self.bitPos)
-				self.parBitVal.append(self.recMsg[self.i-1])
-				self.exp+=1	
+				self.exp+=1
+			
 		return self.parBit
 	
+	def loParBit(self):
+		for self.j in self.parBit:
+			self.parBitVal.append(self.recMsg[self.j-1])
+		return self.parBitVal
+
 	def dicBit(self):
 		self.dicBitPar=self.cBit.calBitsCont(self.recMsg, self.parBit)
 		self.cBitRec = self.cBit.calcParityBit(self.dicBitPar,self.parity,self.recMsg,self.parBit)
@@ -31,3 +36,13 @@ class Receptor(object):
 				self.bit = self.bit + posBit[self.i]
 				
 		return self.bit
+
+	def verifi(self, bitRec, bitCalc,posBit):
+		if bitRec == bitCalc:
+			return 'Mensagem recebida sem erros.'
+		else:
+			self.bitErr = self.calcErro(bitRec, bitCalc, posBit)
+			return "Mensagem com erro no bit ",self.bitErr 
+
+
+
