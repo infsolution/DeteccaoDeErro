@@ -4,6 +4,7 @@ class BitXor(object):
 	bitQuo=[]
 	bitRes=[]
 	def divXor(self,msgPart, pGer):
-		for i in range(len(pGer)):
-			self.bitRes.append(xor(msgPart[i], pGer[i]))
+		if len(msgPart)==len(pGer):
+			for i in range(len(pGer)):
+				self.bitRes.append(xor(msgPart[i], pGer[i]))
 		return self.bitRes
