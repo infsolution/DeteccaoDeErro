@@ -8,7 +8,7 @@ class CRC(object):
 		self.dataBin = self.strToArray(msg)
 		self.pGer = self.strToArray(pG)
 		self.gGer = len(self.pGer)-1
-		#self.dataBin = self.calcFcs()
+		self.dataBin = self.calcFcs()
 
 	def strToArray(self,msg):
 		self.data = self.gerLis(msg)
@@ -33,11 +33,14 @@ class CRC(object):
 ##############################Divisao####################################
 	def opera(self, mx, pG):
 		self.btX = BitXor()
-		if len(mx)>=len(pG):
-			self.sliceM = mx[len(pG)+1:]
+		if len(mx)>len(pG)-1:
+			self.res=[]
+			self.sliceM = mx[len(pG):]
 			self.pXor = mx[:len(pG)]
 			self.res = self.btX.divXor(self.pXor,pG)
-			return self.res
+			self.res = self.rmValZer(self.res)
+			self.fcs = self.joinM(self.res,self.sliceM)
+			return self.opera(self.fcs,pG)
 		else:
 			return mx
 		
@@ -49,11 +52,11 @@ class CRC(object):
 				self.cpRec = recBit[self.i:]
 				return self.cpRec
 
-#	def sliceM(self, msg, pos):
-#		return msg[pos:]
 	def joinM(self, rec, msg):
-		return rec+msg
-
+		if rec == None:
+			return self.rmValZer(msg)
+		else:
+			return rec+msg
 
 
 
