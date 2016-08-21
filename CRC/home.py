@@ -7,4 +7,8 @@ pg = raw_input('informe o polinomio gerador\n')
 crc.loadData(inMsg, pg)
 msg = crc.dataBin
 pG = crc.pGer
-print ('saida no home'), crc.opera(msg,pG)
+fcs = crc.opera(msg,pG)
+print ('saida no home'), fcs
+print ('msgFull'), crc.fullMsg(crc.oriMsg,fcs,crc.pGer)
+print ('origMsg'),crc.oriMsg
+print ('dataBin'),crc.dataBin
