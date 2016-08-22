@@ -80,4 +80,22 @@ class CRC(object):
 				self.somZer.append(0)
 		return msg+self.somZer+fcs
 
-	
+	def toSend(self,answer,msg):
+		if answer == 'S':
+			return msg
+		elif answer == 'E':
+			er=input('Informe o bit onde sera gerado o erro!\n')
+			return self.errGen(msg,er)
+		else:
+			return 'Valor invalido!'
+
+	def errGen(self, msg, eBit):
+		msg[eBit-1] = self.valBit(msg[eBit-1])
+		return msg
+			
+	def valBit(self, bit):
+		if bit == 0:
+			return 1
+		if bit == 1:
+			return 0
+

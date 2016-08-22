@@ -7,9 +7,8 @@ from EndMsg import *
 from Receptor import *
 data = LoadFile()
 arrayF = data.openFile('textAscii')
-dtDic = data.dicTerms(arrayF)
+print data.dicTerms(arrayF)
 word = raw_input('digite a palavra:\n\n')
-print data.decod(word, dtDic)
 par = input('Informe a paridade para controle de erro:\n0(Paridade par) - 1(Paridade impar):\n\n')
 msg = EndMsg()
 msg.loadMsg(word)

@@ -75,7 +75,7 @@ class CRC(object):
 		self.somZer=[]
 		self.lenM = len(pG)-1
 		if len(fcs)<len(pG):
-			self.dif=len(pG)-len(fcs)
+			self.dif=len(pG)-len(fcs)-1
 			for i in range(self.dif):
 				self.somZer.append(0)
 		return msg+self.somZer+fcs
