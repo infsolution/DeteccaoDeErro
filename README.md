@@ -1,1 +1,3 @@
 # DeteccaoDeErro
+Codigo Hamming recebe uma string e converte em binário, gera uma mensagem com controle de erro no padrão Hamming, é possivel enviar a messagem original que chegará ao destino sem erros, ou gerar um erro durante a transmissão e o sistema identificará o bit com erro, contudo só épossivel identificar um bit com erro, por isso só foi implentado a geração de erro em um bit.
+Codigo CRC recebe uma string e converte em binário, gera uma mensagem a partir de um polinõbio gerador e a envia sem erro o possibilita a geração de erro, contudo o sistema não identifica o bit errado, somente a existencia de erro independente do número de bits errados.

@@ -1,6 +1,7 @@
 from CRC import *
 from BitXor import *
 from Receptor import *
+from loadSysten import *
 crc = CRC()
 #btXor = BitXor()
 inMsg = raw_input('Digite a mensagem:\n')

@@ -1,3 +1,4 @@
+#coding=UTF-8
 class LoadFile(object):
 	wordArray=[]
 	dic={}
@@ -16,9 +17,13 @@ class LoadFile(object):
 
 	def decod(self, word, dic):
 		self.wordArray=[]
+		self.msg=[]
 		for self.w in word:
 			self.wordArray.append(self.selVal(self.w,dic))
-		return self.wordArray
+		for self.let in self.wordArray:
+			for self.bit in self.let:
+				self.msg.append(self.bit)
+		return self.msg
 
 
 	def selVal(self, val, dic):

@@ -1,11 +1,15 @@
 from CRC import *
 from BitXor import *
 from Receptor import *
+from loadSysten import *
 crc = CRC()
-#btXor = BitXor()
+data = LoadFile()
+arrayF = data.openFile('textAscii')
+dtDic = data.dicTerms(arrayF)
 inMsg = raw_input('Digite a mensagem:\n')
+decWord = data.decod(inMsg, dtDic)
 pg = raw_input('informe o polinomio gerador\n')
-crc.loadData(inMsg, pg)
+crc.loadData(decWord, pg)
 msg = crc.dataBin
 pG = crc.pGer
 fcs = crc.opera(msg,pG)
